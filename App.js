@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 
 export default function App() {
+  const [counter, setCounter] = useState(0);
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>Number of times{counter} </Text>
+      <TouchableOpacity onPress={() => {
+        setCounter(counter + 1);
+      }}><Text>Touch</Text></TouchableOpacity>
       <StatusBar style="auto" />
     </View>
   );
